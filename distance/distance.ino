@@ -38,13 +38,6 @@ void setup()
   // fast as possible).  To use continuous timed mode
   // instead, provide a desired inter-measurement period in
   // ms (e.g. sensor.startContinuous(100)).
-  sensor.startContinuous();
-}
-
-void loop()
-{
-
-
   display.fillScreen(BLACK); \
   display.setCursor(0,0);
   display.setTextColor(WHITE);
@@ -52,9 +45,12 @@ void loop()
   display.println("Please check your serial ");
   display.setCursor(0, 20);
   display.print("monitor for distance readings.");
+  sensor.startContinuous();
+}
 
+void loop()
+{
   Serial.print("Distance (cm) : ");
   Serial.print((sensor.readRangeContinuousMillimeters() / 10.0));
-
   Serial.println();
 }
