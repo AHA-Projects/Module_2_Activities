@@ -47,6 +47,15 @@ void setup()
   particleSensor.setup(); //Configure sensor with default settings
   particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
   particleSensor.setPulseAmplitudeGreen(0); //Turn off Green LED
+
+  display.fillScreen(BLACK); \
+  display.setCursor(0,0);
+  display.setTextColor(WHITE);
+  display.setTextSize(2);
+  display.println("Please check your serial ");
+  display.setCursor(0, 20);
+  display.print("monitor for BPM readings.");
+
 }
 
 void loop()
@@ -73,17 +82,6 @@ void loop()
       beatAvg /= RATE_SIZE;
     }
   }
-
-  display.fillScreen(BLACK); \
-  display.setCursor(0,0);
-  display.setTextColor(WHITE);
-  display.setTextSize(2);
-  display.println("Please check your serial ");
-  display.setCursor(0, 20);
-  display.print("monitor for BPM readings.");
-
-
-
 
   Serial.print("IR (Infrared Reading)=");
   Serial.print(irValue);
