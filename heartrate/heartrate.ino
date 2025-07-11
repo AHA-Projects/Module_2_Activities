@@ -29,6 +29,11 @@ long lastBeat = 0; //Time at which the last beat occurred
 float beatsPerMinute;
 int beatAvg;
 
+
+#define BLACK   0x0000
+#define WHITE   0xFFFF
+
+
 void setup()
 {
   Serial.begin(115200);
